@@ -61,10 +61,8 @@ scopes = [
 try:
     # Streamlit Secrets から認証情報を取得
     credentials = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=scopes)
-    client = gspread.authorize(credentials)
-
-    # スプレッドシートを開く（スプレッドシートのIDを指定）
-    sheet = client.open_by_key('1R2QKVcLIwAwPE0b4GEr_f1fJ-4wNLt4ZDWyCGK8p-zo').sheet1
+    client = gspread.authorize(credentials)    # スプレッドシートを開く（スプレッドシートのIDを指定）
+    sheet = client.open_by_key('1R2QKVcLIwAwPE0b4GEr_f1fJ-4wNLt4ZDWyCGK8p-zo').worksheet('Yokohama')
 except Exception as e:
     st.error(f"Google Sheets APIの設定中にエラーが発生しました: {str(e)}")
     sheet = None
