@@ -64,7 +64,7 @@ try:
     client = gspread.authorize(credentials)
 
     # スプレッドシートを開く（スプレッドシートのIDを指定）
-    sheet = client.open_by_key('1R2QKVcLIwAwPE0b4GEr_f1fJ-4wNLt4ZDWyCGK8p-zo').worksheet('Yokohama')
+    sheet = client.open_by_key('1R2QKVcLIwAwPE0b4GEr_f1fJ-4wNLt4ZDWyCGK8p-zo').sheet1
 except Exception as e:
     st.error(f"Google Sheets APIの設定中にエラーが発生しました: {str(e)}")
     sheet = None
@@ -115,7 +115,7 @@ def show_page_1():
 def show_page_2():
     st.write("貴重なご意見をありがとうございます！")
     st.write("★以下に口コミ記載＆スタッフ提示で、サンソリット スキンピールバー(約3,000円相当)を特別プレゼント！★")
-    st.markdown("[口コミ記入ページを開く](https://g.page/r/CZ9u7jtKueKvEBM/review)")
+    st.markdown("[口コミ記入ページを開く](https://g.page/r/CfKMnigxxDPWEBI/review)")
     st.write("詳細はスタッフまでお尋ねください。")
 
 def show_page_3():
